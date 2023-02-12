@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <style>
+        #container {
+            height: 500px;
+            width: 500px;
+            border: 2px solid black;
+            margin: auto;
+            background-color: yellowgreen;
+            display: flex;
+            flex-flow: wrap;
+        }
+
+        .btn {
+            text-align: center;
+            padding: 30px;
+            border: 50px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="child"></div>
+    </div>
+    <div class="btn">
+        <button onclick="changeColor()">Change Color</button>
+        <button onclick="addChild()">Add Child </button>
+        <button id="removeChild" onclick="removeChild()">Remove Child</button>
+    </div>
+
+    <script>
+
+        function changeColor() {
+            const rectangle = document.getElementById("container");
+            rectangle.style.background = 'pink';
+        }
+
+        function addChild() {
+            const child = document.createElement('child');
+            child.style.width = '200px'
+            child.style.height = '200px'
+            child.style.border = '2px solid black'
+            child.style.backgroundColor = 'grey'
+            document.querySelector('div').appendChild(child)
+
+        }
+
+        removeChild.addEventListener('click', function () {
+            container.removeChild(container.lastChild);
+        });
+    </script>
+</body>
+
+</html>
